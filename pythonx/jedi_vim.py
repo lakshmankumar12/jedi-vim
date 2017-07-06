@@ -357,7 +357,7 @@ def goto(mode="goto", no_output=False):
                 lst.append(dict(filename=PythonToVimStr(d.module_path),
                                 lnum=d.line, col=d.column + 1,
                                 text=PythonToVimStr(d.description)))
-        vim_eval('setqflist(%s)' % repr(lst))
+        vim_eval('setloclist(0, %s)' % repr(lst))
         vim_eval('jedi#add_goto_window(' + str(len(lst)) + ')')
     return definitions
 

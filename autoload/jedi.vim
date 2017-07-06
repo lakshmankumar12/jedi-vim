@@ -333,7 +333,7 @@ function! jedi#add_goto_window(len) abort
     set lazyredraw
     cclose
     let height = min([a:len, g:jedi#quickfix_window_height])
-    execute 'belowright copen '.height
+    execute 'belowright lopen '.height
     set nolazyredraw
     if g:jedi#use_tabs_not_buffers == 1
         noremap <buffer> <CR> :call jedi#goto_window_on_enter()<CR>
